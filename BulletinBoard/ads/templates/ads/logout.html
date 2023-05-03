@@ -1,0 +1,8 @@
+
+{% extends 'default.html' %}
+{% block content %}
+  <p><h5 class="text-center">До встречи {{ user.username }}! <span class="text-muted fs-6 fw-normal"> </span></h5></p>
+  <p><a href="{% url 'logout' %}">
+    <button>Выйти</button>
+</a></p>
+{% endblock %}

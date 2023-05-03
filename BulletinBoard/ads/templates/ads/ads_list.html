@@ -1,0 +1,25 @@
+{% extends 'default.html' %}
+{% block content %}
+
+<body>
+
+<h1 class="text-center">Все объявления <span class="text-muted fs-6 fw-normal"> </span></h1>
+ <hr>
+        {% for add in ads %}
+<section>
+ <h6 style="text-align: right;">Автор:{{add.author}}</h6>
+    <h6 style="text-align: right;">Категория:{{add.category}}</h6>
+<h6 style="text-align: right;">  <a href="{% url 'ads_update' add.id %}">Редактировать</a></h6>
+    <h6 style="text-align: right;">  <a href="{% url 'ads_delete' add.id %}">Удалить</a></h6>
+
+        <h3 style="text-align: left;">  <li><a href="{% url 'advertisement_detail' add.id %}"><u>{{ add.title }}</u></a></li></h3>
+<p><h5 style="text-align: left;">{{add.content | safe}}</h5></p>
+
+
+
+</section>
+  <hr>
+
+        {% endfor %}
+</body>
+{% endblock content %}

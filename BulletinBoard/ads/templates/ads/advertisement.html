@@ -1,0 +1,9 @@
+{% extends 'default.html' %}
+
+{% block content %}
+    <h1 style="text-align: center;"><u>{{advertisement.title}}</u></h1>
+    {{advertisement.content | safe}}
+ {% if request.user.is_authenticated %}
+  <p class="center"><a href="{% url 'create_response' advertisement.id %}" class="btn btn-primary">Откликнуться</a> </p>
+{% endif %}
+{% endblock content %}
